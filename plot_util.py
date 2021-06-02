@@ -1,9 +1,21 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 import time
 
 import matplotlib
 import seaborn as sns
 
-matplotlib.use('Agg')
+REPL = False
+try:
+    get_ipython
+    REPL = True
+except:
+    if not hasattr(__main__, '__file__'):
+        REPL = True
+
+if not REPL:
+    matplotlib.use('Agg')
 matplotlib.rc('text', usetex=False)
 from matplotlib import pyplot as plt
 
